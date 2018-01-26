@@ -1,5 +1,5 @@
 'use strict';
 
-function sc_alert() {
+function add_cutting_length() {
 	alert('fuck you');
 }
