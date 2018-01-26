@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script type="text/javascript" src="lib.js"></script>
 		<h1 id="header">smart cut demo</h1>
 	</head>
 
@@ -11,7 +12,7 @@
 		<br>
 
 		切割长度(cm): 	<input id=cLen type="text" value="131"/>
-					<input id=addCLen type="button" value="+"/>
+					<input id=addCLen type="button" value="+" onclick="sc_alert()" />
 		<br>
 
 		切割损耗(cm): 	<input id=protolen type="text" value="3"/>
