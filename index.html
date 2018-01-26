@@ -8,15 +8,19 @@
 	</head>
 
 	<body>
-		原始长度(cm): 	<input id=protolen type="text" value="600"/>
-		<br>
+		<div id=div_user_input>
+		原始长度(cm): 	<input id=proto_len type="text" value="600"/><br>
 
-		切割长度(cm): 	<input id=cLen type="text" value="131"/>
-					<input id=addCLen type="button" value="+" onclick="add_cutting_length()" />
-		<br>
+		切割长度(cm): 	<input id=cutting_len type="text" value="131"/>
+						<input id=add_cutting_len type="button" value="+" onclick="add_cutting_length()"/><br>
 
-		切割损耗(cm): 	<input id=protolen type="text" value="3"/>
-		<br>
+		切割损耗(cm): 	<input id=waste_len type="text" value="3"/><br>
+		</div>
+
+		<div id=div_cutting_list>
+		<p id=cutting_list_title>切割长度列表</p>
+
+		</div>
 		<p id="footer">Copyright N/A</p>
 	</body>
 </html>
