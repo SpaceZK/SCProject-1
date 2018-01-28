@@ -3,7 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="style.css"/>
-		<script type="text/javascript" src="lib.js"></script>
+
+        <script>
+			window.$ = window.jQuery = require("./3rd/jquery-3.3.1.js");
+		</script>
+
+		<script>
+			alert("值为: " + $("#proto_len").val());
+		</script>
 		<h1 id="header">smart cut demo</h1>
 	</head>
 
@@ -12,14 +19,18 @@
 		原始长度(cm): 	<input id=proto_len type="text" value="600"/><br>
 
 		切割长度(cm): 	<input id=cutting_len type="text" value="131"/>
-						<input id=add_cutting_len type="button" value="+" onclick="add_cutting_length()"/><br>
+						<button id=add_cutting_len>
+						+
+						</button><br>
 
 		切割损耗(cm): 	<input id=waste_len type="text" value="3"/><br>
 		</div>
 
 		<div id=div_cutting_list>
 		<p id=cutting_list_title>切割长度列表</p>
-
+		<ul>
+			<li>test1</li>
+		</ul>
 		</div>
 		<p id="footer">Copyright N/A</p>
 	</body>
