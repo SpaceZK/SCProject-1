@@ -1,10 +1,11 @@
-require("jsdom").env("", function(err, window) {
-    if (err) {
-        console.error(err);
-        return;
-    }
+$( document ).ready(function() {
  
-    var $ = require("jquery")(window);
+    $( "#add_cutting_len" ).click(function( event ) {
+ 
+        alert( "As you can see, the link no longer took you to jquery.com" );
+ 
+        event.preventDefault();
+ 
+    });
+ 
 });
-
-alert("值为: " + $("#proto_len").val());
