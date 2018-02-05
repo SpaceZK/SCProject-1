@@ -35,6 +35,11 @@ function getFragmentList() {
     }
 }
 /**** just for test *****/
+redisClient.select("2", function (error) {
+    if(error) {
+        console.log(error);
+    }
+});
 redisClient.hkeys("hash key", function(err, replies) {
     console.log(replies.length + " replies: ");
     replies.forEach(function (reply, i) {
@@ -42,5 +47,6 @@ redisClient.hkeys("hash key", function(err, replies) {
     });
     redisClient.quit();
 });
+redisClient.hset("fuck you2", "酸菜鱼", "好吃", redis.print);
 /*
 */
