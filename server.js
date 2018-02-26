@@ -54,3 +54,6 @@ let server = http.createServer(function(request, response) {
 server.listen(port, function() {
 	console.log('Server listening on port ' + port);
 });
+
+let dataServer = require('./lib/data_server.js');
+dataServer.listen(server);
