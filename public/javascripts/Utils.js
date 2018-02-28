@@ -5,15 +5,9 @@ let DataUnit = function(len, sel) {
 	this.selected = sel;
 }
 
-let CuttingData = function(socket, data) {
+let CuttingData = function(socket) {
 	this.socket = socket;
 	this.dataList = new Array();
-	if(data) {
-		for(let i = 0; i < data.length(); i++) {
-			this.dataList.push(data[i]);	//copy the data
-		}
-	}
-
 }
 
 CuttingData.prototype.AddCuttingUnit = function (unit) {
@@ -24,6 +18,13 @@ CuttingData.prototype.AddCuttingUnit = function (unit) {
 	}
 	this.dataList.push(unit);
 	return true;
+}
+
+CuttingData.prototype.LoadDataList(datLst) {
+	this.dataList.clear();
+	for(let i = 0; i < datLst.length(); i++) {
+		this.dataList.push(datLst[i]);
+	}
 }
 
 CuttingData.prototype.RemoveCuttingUnit = function (unit) {
