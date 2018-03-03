@@ -20,7 +20,7 @@ CuttingData.prototype.AddCuttingUnit = function (unit) {
 	return true;
 }
 
-CuttingData.prototype.LoadDataList(datLst) {
+CuttingData.prototype.LoadDataList = function(datLst) {
 	this.dataList.clear();
 	for(let i = 0; i < datLst.length(); i++) {
 		this.dataList.push(datLst[i]);
