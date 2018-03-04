@@ -11,6 +11,11 @@ $(document).ready(function() {
 		//alert('request pullData');
 		socket.emit('pullData', {});
 	});
+
+	$('#push_data').click(function() {
+		//alert('emit pushData');
+		socket.emit('pushData', {data: 'test'});
+	});
 });
 
 function handleServerEvents(sock) {
