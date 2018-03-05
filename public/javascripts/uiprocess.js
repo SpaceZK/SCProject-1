@@ -1,5 +1,7 @@
 var socket = io.connect();
 
+var cuttingDataList = new DataList();
+
 handleServerEvents(socket);
 
 $(document).ready(function() {
