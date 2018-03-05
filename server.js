@@ -1,11 +1,9 @@
-'use strict';
-
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const mime = require('mime');
 const port = 9877;
-let cache = {};
+var cache = {};
 
 function send404(response) {
 	response.writeHead(404, {'Content-Type': 'text/plain'});
@@ -39,15 +37,15 @@ function serveStatic(response, cache, absPath) {
 	}
 }
 
-let server = http.createServer(function(request, response) {
-	let filePath = false;
+var server = http.createServer(function(request, response) {
+	var filePath = false;
 	if(request.url == '/') {
 		filePath = 'public/index.html';
 	} else {
 		filePath = 'public' + request.url;
 	}
 
-	let absPath = './' + filePath;
+	var absPath = './' + filePath;
 	serveStatic(response, cache, absPath);
 });
 
@@ -55,5 +53,5 @@ server.listen(port, function() {
 	console.log('Server listening on port ' + port);
 });
 
-let dataServer = require('./lib/data_server.js');
+var dataServer = require('./lib/data_server.js');
 dataServer.listen(server);

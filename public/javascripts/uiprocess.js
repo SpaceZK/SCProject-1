@@ -1,8 +1,4 @@
-'use strict';
-
-let socket = io.connect();
-
-//let cuttingData = new CuttingData(socket);
+var socket = io.connect();
 
 handleServerEvents(socket);
 
@@ -21,5 +17,6 @@ $(document).ready(function() {
 function handleServerEvents(sock) {
 	sock.on('updateDataList', function(data) {
 		alert(JSON.stringify(data));
+
 	});
 }
