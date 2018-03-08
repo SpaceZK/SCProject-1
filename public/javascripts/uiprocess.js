@@ -19,6 +19,6 @@ $(document).ready(function() {
 function handleServerEvents(sock) {
 	sock.on('updateDataList', function(data) {
 		alert(JSON.stringify(data));
-
+		
 	});
 }
