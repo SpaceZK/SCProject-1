@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="leTotalLength">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="leCuttingLength">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -39,12 +39,12 @@
      <rect>
       <x>160</x>
       <y>120</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>添加切割长度</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnSetTotalLength">
@@ -52,28 +52,28 @@
      <rect>
       <x>160</x>
       <y>50</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>修改总长度</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="btnGenerateResult">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>334</x>
       <y>90</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>生成切割方法</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="btnSelectAll">
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -83,10 +83,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>全选</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="btnSelectInvert">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -96,20 +96,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>反选</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="btnDeleteSelections">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>644</x>
       <y>420</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>删除选中项</string>
     </property>
    </widget>
   </widget>
