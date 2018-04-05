@@ -43,3 +43,7 @@ bool CuttingData::GetCuttingItemByIndex(int index, CuttingItem & ci) {
     ci = *it;
     return true;
 }
+
+int CuttingData::GetCuttingItemCount() {
+    return m_lstCuttingItems.size();
+}

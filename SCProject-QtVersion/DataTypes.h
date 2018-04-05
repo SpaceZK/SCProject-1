@@ -27,6 +27,7 @@ public:
     bool AddCuttingItem(int length);
     bool RemoveCuttingItem(int length);
     bool GetCuttingItemByIndex(int index, CuttingItem & ci);
+    int GetCuttingItemCount(void);
 private:
     std::list<CuttingItem> m_lstCuttingItems;
 };
