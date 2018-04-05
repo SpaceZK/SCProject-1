@@ -3,15 +3,7 @@
 
 #include <DataTypes.h>
 
-struct ProtoType {
-    ProtoType(int c = 0, int v = 0) {
-        cost = c;
-        value = v;
-    }
-
-    int cost;
-    int value;
-};
+std::list<int> DynamicProcessProtoData(std::list<int> data);
 
 class CuttingFunctions
 {
@@ -20,7 +12,6 @@ public:
     CuttingData GenerateStatge();
 private:
     CuttingData m_CuttingData;
-    bool DynamicProcessProtoData();
 };
 
 #endif // CUTTINGFUNCTIONS_H
