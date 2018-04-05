@@ -112,6 +112,19 @@
      <string>删除选中项</string>
     </property>
    </widget>
+   <widget class="QScrollBar" name="sbCuttingItems">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>60</y>
+      <width>16</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
