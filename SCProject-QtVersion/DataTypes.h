@@ -2,7 +2,7 @@
 #define DATATYPES_H
 
 #include <list>
-
+#define _DATA_TEST_
 
 class CuttingItem {
 public:
@@ -26,6 +26,7 @@ public:
     
     bool AddCuttingItem(int length);
     bool RemoveCuttingItem(int length);
+    bool GetCuttingItemByIndex(int index, CuttingItem & ci);
 private:
     std::list<CuttingItem> m_lstCuttingItems;
 };
