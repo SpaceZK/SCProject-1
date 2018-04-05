@@ -14,6 +14,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     
+private slots:
+    void on_btnAddCuttingLength_clicked();
+
+    void on_btnDelCuttingLength_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -6,30 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>686</width>
+    <height>395</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>SmartCut V1.0</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="leTotalLength">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>50</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="leCuttingLength">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>120</y>
-      <width>113</width>
+      <x>20</x>
+      <y>70</y>
+      <width>151</width>
       <height>20</height>
      </rect>
     </property>
@@ -37,92 +27,83 @@
    <widget class="QPushButton" name="btnAddCuttingLength">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>120</y>
-      <width>91</width>
+      <x>180</x>
+      <y>70</y>
+      <width>51</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>添加切割长度</string>
+     <string>+</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSetTotalLength">
+   <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>50</y>
-      <width>91</width>
-      <height>23</height>
+      <x>20</x>
+      <y>100</y>
+      <width>261</width>
+      <height>261</height>
      </rect>
     </property>
-    <property name="text">
-     <string>修改总长度</string>
-    </property>
    </widget>
-   <widget class="QPushButton" name="btnGenerateResult">
+   <widget class="QPushButton" name="btnSetOriginalLength">
     <property name="geometry">
      <rect>
-      <x>334</x>
-      <y>90</y>
-      <width>91</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>生成切割方法</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnSelectAll">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
+      <x>180</x>
       <y>30</y>
-      <width>75</width>
+      <width>101</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>全选</string>
+     <string>设置总长度</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSelectInvert">
+   <widget class="QLineEdit" name="leOriginalLength">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>20</x>
       <y>30</y>
-      <width>75</width>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDelCuttingLength">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>70</y>
+      <width>51</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>反选</string>
+     <string>-</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnDeleteSelections">
+   <widget class="QPushButton" name="btnDelCuttingLength_2">
     <property name="geometry">
      <rect>
-      <x>644</x>
-      <y>420</y>
-      <width>91</width>
-      <height>23</height>
+      <x>300</x>
+      <y>160</y>
+      <width>81</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>删除选中项</string>
+     <string>→</string>
     </property>
    </widget>
-   <widget class="QScrollBar" name="sbCuttingItems">
+   <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>730</x>
-      <y>60</y>
-      <width>16</width>
-      <height>351</height>
+      <x>400</x>
+      <y>100</y>
+      <width>261</width>
+      <height>261</height>
      </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>
@@ -131,7 +112,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>686</width>
      <height>23</height>
     </rect>
    </property>
