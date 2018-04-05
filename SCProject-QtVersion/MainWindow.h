@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "DataTypes.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -21,6 +23,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    CuttingData *cuttingData;
 };
 
 #endif // MAINWINDOW_H
