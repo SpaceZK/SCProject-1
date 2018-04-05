@@ -1,7 +1,9 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
-#include "QMessageBox.h"
-#include <iostream>
+#include <QMessageBox>
+#include <QCheckBox>
+#include <QList>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -16,16 +18,16 @@ MainWindow::~MainWindow()
     delete cuttingData;
 }
 
-void MainWindow::on_btnAddCuttingLength_clicked()
-{
+void MainWindow::on_btnAddCuttingLength_clicked(){
     int len = ui->leCuttingLength->text().toInt();
     if(len > 0){
         if(cuttingData->AddCuttingItem(len)){
-            QListWidgetItem *item = new QListWidgetItem(ui->listWidget);
-            QStyle::StandardPixmap sp = (QStyle::StandardPixmap)(2);
+            QListWidgetItem *item = new QListWidgetItem();
+            QCheckBox *checkBox = new QCheckBox(QString().sprintf("%d 厘米", len));
+            checkBox->setCheckable(true);
 
-            item->setData(Qt::DecorationRole, qApp->style()->standardPixmap(sp).scaled(QSize(16,16), Qt::KeepAspectRatio, Qt::SmoothTransformation) );
-            item->setData(Qt::DisplayRole,QObject::tr("%1 厘米").arg(len));
+            ui->listWidget->addItem(item);
+            ui->listWidget->setItemWidget(item, checkBox);
         }else{
             QMessageBox::information(this, QString("警告"),QString("输入数据已存在,请勿重复输入!"));
         }
@@ -35,18 +37,26 @@ void MainWindow::on_btnAddCuttingLength_clicked()
     }
 }
 
-void MainWindow::on_btnDelCuttingLength_clicked()
-{
-    if(ui->listWidget->currentItem() != Q_NULLPTR)
-    {
-        QListWidgetItem * item = ui->listWidget->takeItem(ui->listWidget->currentRow());
+void MainWindow::on_btnDelCuttingLength_clicked(){
+    QList<int> qlRemoveItems;
+    for (int i = 0; i < ui->listWidget->count(); i++){
+        QWidget *widget = ui->listWidget->itemWidget(ui->listWidget->item(i));
+        QCheckBox *checkBox = dynamic_cast<QCheckBox *>(widget);
+        if(checkBox && checkBox->isChecked()){
+            QStringList sl = checkBox->text().split(' ');
+            int len = ((QString)sl[0]).toInt();
+            if(len){
+                cuttingData->RemoveCuttingItem(len);
+            }
+            qlRemoveItems << i;
+        }
+    }
+
+    int count = 0;
+    foreach(int i, qlRemoveItems){
+        QListWidgetItem *item = ui->listWidget->takeItem(i - count);
         delete item;
 
-        QStringList sl = item->text().split(' ');
-        int len = ((QString)sl[0]).toInt();
-
-        if(len){
-            cuttingData->RemoveCuttingItem(len);
-        }
+        count++;
     }
 }
