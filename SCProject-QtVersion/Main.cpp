@@ -1,6 +1,10 @@
 #include "MainWindow.h"
+#include "DataTypes.h"
 #include <QApplication>
 
+#ifdef _DATA_TEST_
+
+#else
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -9,3 +13,4 @@ int main(int argc, char *argv[])
     
     return a.exec();
 }
+#endif

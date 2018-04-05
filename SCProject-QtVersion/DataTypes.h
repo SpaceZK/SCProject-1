@@ -10,11 +10,15 @@ public:
         length = len;
         selected = sel;
     }
+    bool operator == (const CuttingItem & r) {
+        return length == r.length;
+    }
 
     int length;
     bool selected;
     
 };
+
 class CuttingData {
 public:
     CuttingData();

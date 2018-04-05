@@ -1,8 +1,7 @@
 #include "DataTypes.h"
 using namespace std;
 
-bool CuttingData::AddCuttingItem(int length)
-{
+bool CuttingData::AddCuttingItem(int length) {
     list<CuttingItem>::iterator it = m_lstCuttingItems.begin();
     for( ; it != m_lstCuttingItems.end(); it++) {
         if((*it).length == length) {
@@ -14,7 +13,14 @@ bool CuttingData::AddCuttingItem(int length)
     return true;
 }
 
-bool CuttingData::RemoveCuttingItem(int length)
-{
-    return true;
+bool CuttingData::RemoveCuttingItem(int length) {
+    list<CuttingItem>::iterator it = m_lstCuttingItems.begin();
+    for( ; it != m_lstCuttingItems.end(); it++) {
+        if((*it).length == length) {
+            m_lstCuttingItems.remove(*it);
+            return true;
+        }
+    }
+    return false;
 }
+
