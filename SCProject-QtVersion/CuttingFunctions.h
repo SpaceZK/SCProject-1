@@ -1,17 +1,16 @@
 #ifndef CUTTINGFUNCTIONS_H
 #define CUTTINGFUNCTIONS_H
 
-#include <vector>
+#include <DataTypes.h>
 
 class CuttingFunctions
 {
 public:
     CuttingFunctions();
     
-    bool AddCuttingLength(int len);
 private:
-    std::vector<int> m_tDataList;
-    int m_iTotalLength;
+    CuttingData m_CuttingData;
+    void __PreprocessCuttingData();
 };
 
 #endif // CUTTINGFUNCTIONS_H

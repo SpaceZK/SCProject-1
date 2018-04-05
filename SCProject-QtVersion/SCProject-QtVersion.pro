@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         MainWindow.cpp \
     Main.cpp \
-    CuttingFunctions.cpp
+    CuttingFunctions.cpp \
+    DataTypes.cpp
 
 HEADERS += \
         MainWindow.h \
-    CuttingFunctions.h
+    CuttingFunctions.h \
+    DataTypes.h
 
 FORMS += \
         MainWindow.ui
