@@ -2,11 +2,19 @@
 using namespace std;
 
 CuttingData::CuttingData() {
-    
+    m_iOriginalLength = 0;
 }
 
 CuttingData::~CuttingData() {
     
+}
+
+int CuttingData::GetOriginalLength() {
+    return m_iOriginalLength;
+}
+
+void CuttingData::SetOriginalLength(int len) {
+    m_iOriginalLength = len;
 }
 
 bool CuttingData::AddCuttingItem(int length) {

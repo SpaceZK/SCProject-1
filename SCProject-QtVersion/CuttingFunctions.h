@@ -16,14 +16,11 @@ struct ProtoType {
 class CuttingFunctions
 {
 public:
-    CuttingFunctions(int totalLength = 0);
+    CuttingFunctions();
     CuttingData GenerateStatge();
-    int GetTotalLength(void);
-    void SetTotalLength(int len);
 private:
-    int m_iTotalLength;
     CuttingData m_CuttingData;
-    bool DynamicProcessProtoData(std::list<ProtoType> data);
+    bool DynamicProcessProtoData();
 };
 
 #endif // CUTTINGFUNCTIONS_H
