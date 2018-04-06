@@ -40,7 +40,7 @@ void CoreDP::ClearDPData() {
     memset(m_pSelections, 0, COREDP_MAX_ITEMS * sizeof(bool));
 }
 
-void CoreDP::GenerateResults(vector<CoreDPItem> data) {
+std::vector<CoreDPItem> CoreDP::GenerateResults(vector<CoreDPItem> data) {
     cout << "max capacity: " << m_iMaxCapacity << endl;
     cout << "item count: " << data.size() << endl;
     for(int i = 0; i < data.size(); i++) {
@@ -65,8 +65,11 @@ void CoreDP::GenerateResults(vector<CoreDPItem> data) {
     vector<CoreDPItem> ans;
     for(int i = 0 ; i < data.size(); i++) {
         if(m_pSelections[i]) {
+            ans.push_back(data[i]);
             cout << "the item: " << i << "  Has been selected." << endl; 
         }
     }
+    
+    return ans;
 }
 
