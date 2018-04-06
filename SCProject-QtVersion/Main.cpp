@@ -1,44 +1,27 @@
 #include "MainWindow.h"
 #include "DataTypes.h"
+#include "CoreDP.h"
 #include <QApplication>
 #include <iostream>
+#include <vector>
 using namespace std;
 
-#ifdef _DATA_TEST_
+#ifdef _COREDP_DEBUG_
 int main(int argc, char *argv[]) {
-    CuttingData cd;
-    for(int i = 0; i < 10; i++) {
-        cd.AddCuttingItem(i*i);
+    
+    CoreDP cdp;
+    cdp.ClearDPData();
+    cdp.SetMaxCapacity(10);
+    int c[] = {2, 2, 6, 5, 4};
+    int v[] = {6, 3, 5, 4, 6};
+    vector<CoreDPItem> dpItems;
+    CoreDPItem cdpi;
+    for(int i = 0; i < 5; i++) {
+        cdpi.cost = c[i];
+        cdpi.value = v[i];
+        dpItems.push_back(cdpi);
     }
-    
-    for(int i = 0; i < cd.GetCuttingItemCount(); i++) {
-        CuttingItem ci;
-        cd.GetCuttingItemByIndex(i, ci);
-        cout << "the item's length is: " << ci.length << " , " << "selected : " << ci.selected << endl;
-    }
-    
-    for(int i = 0; i < cd.GetCuttingItemCount(); ) {
-        CuttingItem ci;
-        cd.GetCuttingItemByIndex(i, ci);
-        cout << "ci.length%10 = " << ci.length%10 <<endl;
-        cout << "ci.length%10%3 = " << ci.length%10%3 <<endl;
-        if((ci.length%10)%3 == 0) {
-            cout << "length : " << ci.length << "  has been removed" << endl;
-            cd.RemoveCuttingItem(ci.length);
-        } else {
-            i++;
-        }
-    }
-    
-    cout << "------------------after process---------------------->>>>" << endl;
-    
-    
-    for(int i = 0; i < cd.GetCuttingItemCount(); i++) {
-        CuttingItem ci;
-        cd.GetCuttingItemByIndex(i, ci);
-        cout << "the item's length is: " << ci.length << " , " << "selected : " << ci.selected << endl;
-    }
-    
+    cdp.GenerateResults(dpItems);
     return 0;
 }
 

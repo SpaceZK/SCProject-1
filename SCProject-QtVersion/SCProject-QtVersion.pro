@@ -27,12 +27,14 @@ SOURCES += \
         MainWindow.cpp \
     Main.cpp \
     CuttingFunctions.cpp \
-    DataTypes.cpp
+    DataTypes.cpp \
+    CoreDP.cpp
 
 HEADERS += \
         MainWindow.h \
     CuttingFunctions.h \
-    DataTypes.h
+    DataTypes.h \
+    CoreDP.h
 
 FORMS += \
         MainWindow.ui
