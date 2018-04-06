@@ -6,14 +6,16 @@
 #include <vector>
 using namespace std;
 
-#ifdef _COREDP_DEBUG_
+#if 1
 int main(int argc, char *argv[]) {
-    
+    /*
     CoreDP cdp;
     cdp.ClearDPData();
     cdp.SetMaxCapacity(10);
+    */
     int c[] = {2, 2, 6, 5, 4};
     int v[] = {6, 3, 5, 4, 6};
+    /*
     vector<CoreDPItem> dpItems;
     CoreDPItem cdpi;
     for(int i = 0; i < 5; i++) {
@@ -22,6 +24,11 @@ int main(int argc, char *argv[]) {
         dpItems.push_back(cdpi);
     }
     cdp.GenerateResults(dpItems);
+    */
+    CuttingData cd;
+    for(int i = 0; i < 5; i++) {
+        cd.AddCuttingItem()
+    }
     return 0;
 }
 

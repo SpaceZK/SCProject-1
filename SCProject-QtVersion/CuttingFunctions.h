@@ -1,17 +1,9 @@
 #ifndef CUTTINGFUNCTIONS_H
 #define CUTTINGFUNCTIONS_H
+#include <vector>
+#include "DataTypes.h"
+#include "CoreDP.h"
 
-#include <DataTypes.h>
-
-std::list<int> DynamicProcessProtoData(std::list<int> data);
-
-class CuttingFunctions
-{
-public:
-    CuttingFunctions();
-    CuttingData GenerateStatge();
-private:
-    CuttingData m_CuttingData;
-};
+std::vector<CuttingItem> GeneratorCuttingStrategy(CuttingData cd, CoreDP cdp);
 
 #endif // CUTTINGFUNCTIONS_H

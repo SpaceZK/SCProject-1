@@ -2,7 +2,7 @@
 #define COREDP_H
 #include <vector>
 
-#define _COREDP_DEBUG_
+//#define _COREDP_DEBUG_
 
 struct CoreDPItem {
     int cost;

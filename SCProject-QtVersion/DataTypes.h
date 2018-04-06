@@ -37,7 +37,7 @@ public:
 private:
     std::list<CuttingItem> m_lstCuttingItems;
     int m_iOriginalLength;
-    int m_iCuttingWaste;
+    int m_iWasteLength;
 };
 
 #endif // DATATYPES_H

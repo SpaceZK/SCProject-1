@@ -17,6 +17,15 @@ void CuttingData::SetOriginalLength(int len) {
     m_iOriginalLength = len;
 }
 
+int CuttingData::GetWasteLength() {
+    return m_iWasteLength;
+}
+
+void CuttingData::SetWasteLength(int len) {
+    m_iWasteLength = len;
+}
+
+
 bool CuttingData::AddCuttingItem(int length) {
     list<CuttingItem>::iterator it = m_lstCuttingItems.begin();
     for( ; it != m_lstCuttingItems.end(); it++) {
