@@ -26,13 +26,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         MainWindow.cpp \
     Main.cpp \
-    CuttingFunctions.cpp \
     DataTypes.cpp \
     CoreDP.cpp
 
 HEADERS += \
         MainWindow.h \
-    CuttingFunctions.h \
     DataTypes.h \
     CoreDP.h
 

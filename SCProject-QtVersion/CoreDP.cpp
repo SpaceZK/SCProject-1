@@ -41,6 +41,7 @@ void CoreDP::ClearDPData() {
 }
 
 std::vector<CoreDPItem> CoreDP::GenerateResults(vector<CoreDPItem> data) {
+    vector<CoreDPItem> ans;
     cout << "max capacity: " << m_iMaxCapacity << endl;
     cout << "item count: " << data.size() << endl;
     for(int i = 0; i < data.size(); i++) {
@@ -53,7 +54,6 @@ std::vector<CoreDPItem> CoreDP::GenerateResults(vector<CoreDPItem> data) {
         }
     }
     cout << "The best result is : " << m_pDPData[data.size()][m_iMaxCapacity] << endl;
-    
     int maxCap = m_iMaxCapacity;
     for(int i = data.size(); i >= 1; i--) {
         if(m_pDPData[i][maxCap] != m_pDPData[i - 1][maxCap]) {
@@ -61,14 +61,15 @@ std::vector<CoreDPItem> CoreDP::GenerateResults(vector<CoreDPItem> data) {
             maxCap -= data[i - 1].cost;
         }
     }
-    
-    vector<CoreDPItem> ans;
+    cout << "at" << __FILE__ << "  Function: " << __FUNCTION__ << " line: " <<  __LINE__ <<endl;
     for(int i = 0 ; i < data.size(); i++) {
         if(m_pSelections[i]) {
             ans.push_back(data[i]);
             cout << "the item: " << i << "  Has been selected." << endl; 
         }
+        
     }
+    cout << "at" << __FILE__ << "  Function: " << __FUNCTION__ << " line: " <<  __LINE__ <<endl;
     
     return ans;
 }
